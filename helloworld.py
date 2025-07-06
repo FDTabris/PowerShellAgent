@@ -1,7 +1,7 @@
 import os
 import json
 from openai import AzureOpenAI
-from azure.identity import InteractiveBrowserCredential, DefaultAzureCredential, get_bearer_token_provider
+from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 
 with open('config.json', 'r') as config_file:
     config = json.load(config_file)
@@ -28,12 +28,6 @@ client = AzureOpenAI(
     azure_endpoint=endpoint,
     azure_ad_token_provider=token_provider
 )
-
-# client = AzureOpenAI(
-#     api_version=api_version,
-#     azure_endpoint=endpoint,
-#     api_key=subscription_key,
-# )
 
 response = client.chat.completions.create(
     messages=[

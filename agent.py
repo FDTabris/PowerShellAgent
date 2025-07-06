@@ -1,4 +1,5 @@
 import json
+from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from langchain_openai import AzureChatOpenAI
 from langchain_core.tools import tool
 from langchain import hub  # To pull react prompt
@@ -49,15 +50,19 @@ endpoint = config.get("endpoint")
 # model_name = config.get("model_name")
 deployment = config.get("deployment")
 
-subscription_key = config.get("subscription_key")
+# subscription_key = config.get("subscription_key")
 api_version = config.get("api_version")
+token_provider = get_bearer_token_provider(
+    DefaultAzureCredential(),
+    "https://cognitiveservices.azure.com/.default"
+)
 
 # Initialize Azure-backed LLM
 llm = AzureChatOpenAI(
     azure_deployment= deployment,
-    openai_api_version=api_version,
-    temperature=1.0,
-    api_key=subscription_key,
+    openai_api_version= api_version,
+    temperature= 1.0,
+    azure_ad_token_provider= token_provider,
     azure_endpoint=endpoint,
 )
 
