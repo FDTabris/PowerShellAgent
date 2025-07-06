@@ -1,0 +1,1 @@
+This is a simple LLM agent that collaborate with PowerShell on Windows.

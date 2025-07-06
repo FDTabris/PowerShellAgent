@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+*.pyd
+*.dll
+
+# Virtual environment folders (commonly named venv or .venv)
+venv/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# Pytest / coverage / test outputs
+.coverage
+htmlcov/
+.tox/
+.nox/
+pytest_cache/
+
+# MyPy / Pylint / Ruff / other linting tools
+.mypy_cache/
+.dmypy.json
+.pyre/
+ruff_cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Environment variables, secrets, etc.
+.env
+.env.*
+
+# Logs
+*.log
+
+# macOS / Windows / Linux OS junk
+.DS_Store
+Thumbs.db
