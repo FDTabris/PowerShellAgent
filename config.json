@@ -1,0 +1,8 @@
+{
+    "endpoint": "https://azure-ai-jianlu.openai.azure.com/",
+    "model_name": "gpt-4.1-mini",
+    "deployment": "gpt-4.1-mini",
+    "subscription_key": "",
+    "config_file": "config.json",
+    "api_version": "2024-12-01-preview"
+}
